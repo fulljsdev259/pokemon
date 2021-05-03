@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import login from "./login/reducer";
+import pokemons from './details/reducer'
 
 
  const appReducer = combineReducers({
-  login,
+  pokemons
 });
 
 

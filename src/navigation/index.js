@@ -1,26 +1,26 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Login from '../screens/Login';
-import Dashboard from '../screens/DashBoard';
+import Pokemons from '../screens/Pokemons';
+import PokemonDetails from '../screens/PokemonDetails';
 
 const Stack = createStackNavigator();
 
 const routes = [
     {
-        component:Login,
-        name:'Login'
+        component:Pokemons,
+        name:'Pokemons'
     },
     {
-        component:Dashboard,
-        name:'Dashboard'
+        component:PokemonDetails,
+        name:'PokemonDetails'
     }
 ]
 
 export default function Navigation() {
     return (
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Login"  >
+          <Stack.Navigator initialRouteName="Pokemons"  >
             {
               routes.map((route)=>{
                 return(

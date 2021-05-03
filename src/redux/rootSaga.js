@@ -1,11 +1,11 @@
 import { takeLatest, takeEvery, all } from "redux-saga/effects";
 import * as constants from "./constants";
-import {loginRequest, getAllUsers} from './login/action';
+import { getPokemonsRequest, getPokemonsDetailsRequest } from './details/actions'
 
 
 export function* watchActions() {
-  yield takeLatest(constants.LOGIN_REQUEST, loginRequest);
-  yield takeLatest(constants.GET_USERS_REQUEST, getAllUsers);
+  yield takeLatest(constants.GET_POKEMON_REQUEST, getPokemonsRequest);
+  yield takeLatest(constants.GET_POKEMON_DETAILS_REQUEST, getPokemonsDetailsRequest);
 
 }
 

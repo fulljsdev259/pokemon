@@ -6,37 +6,36 @@
  * @flow strict-local
  */
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, StatusBar } from 'react-native';
 import Navigation from './src/navigation';
-import colors from './src/helper/colors';
 import { Provider } from "react-redux";
 import store from './src/redux/store';
-
+import SplashScreen from 'react-native-splash-screen'
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const App = () => {
+
+  useEffect(() => {
+    SplashScreen.hide();
+  }, [])
+
   return (
-    < >
-      <StatusBar translucent={false} backgroundColor={colors.APPCOLOR} barStyle="light-content" />
-     <Provider store={store} >
-        <Navigation/> 
-     </Provider>
-    </>
+    <SafeAreaView style={styles.safeAreaView} edges={['top']}>
+      <StatusBar backgroundColor="#3f51b5" />
+      <Provider store={store} >
+        <Navigation />
+      </Provider>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: 'red',
+  safeAreaView: {
+    flex: 1,
+    backgroundColor: '#3f51b5'
   },
-  
+
 });
 
 export default App;
